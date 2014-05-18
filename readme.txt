@@ -1,4 +1,5 @@
-=== Plugin Name ===
+=== Likes Counter ===
+
 Contributors: goncaloneves
 Donate link: https://github.com/goncaloneves
 Tags: facebook, fb, likes, like, counter, count, graph, shortcode, plugin
@@ -17,7 +18,7 @@ Likes Counter gets Facebook Likes of any page you want and stores the returning 
 
 After the cache duration expires, it will make a new request and update the Likes value, again for the duration set.
 
-This plugin store its values with Transients API, so it can be cachable outside database with memcached plugins. I recommend using [W3 Total Cache][1].
+This plugin store its values with Transients API, so it can be cachable outside database with memcached plugins. I recommend using [W3 Total Cache](http://wordpress.org/plugins/w3-total-cache/ 'W3 Total Cache').
 
 I made this plugin to be as light as possible, so I ended up making a shortcode that gives the user the functionality to build a powerful Facebook Likes Counter.
 
@@ -38,11 +39,13 @@ Caches the value for 30 minutes,
 Offsets likes count by 10,
 Adds a thousand separator dot.
 
-Inside your php files, for example in a Theme template, use [do_shortcode][2]:
+Inside your php files, for example in a Theme template, use [do_shortcode](http://codex.wordpress.org/Function_Reference/do_shortcode 'do_shortcode'):
 
     <?php echo do_shortcode( '[likescounter page="page_name_or_id"]' ); ?>
 
+
 ----------
+
 
 ## Attributes ##
 
@@ -51,7 +54,9 @@ Inside your php files, for example in a Theme template, use [do_shortcode][2]:
 *   **offset (int) (default: 0):** Subtracts from Likes value and returns the rest. It can be used to reset likes count for a Likes goal objective in marketing campaigns. [0 to number of current likes]
 *   **separator (string) (default: none):** thousand separator type [dot, comma or space]
 
+
 ----------
+
 
 ## Important ##
 
@@ -62,7 +67,9 @@ If you get this there are two possible reasons:
  - Page / id misspelled or doesn't exist (most likely),
  - Couldn't connect to Facebook Graph API or Timeout. It may happen if you reach Facebook policy limits, consider increasing cache duration.
 
+
 ----------
+
 
 **Thank you** for you interest in Likes Counter plugin.
 
@@ -103,6 +110,3 @@ Please write in Support tab or issue on Github at https://github.com/goncaloneve
 
 = 1.0 =
 * First stable release.
-
-  [1]: http://wordpress.org/plugins/w3-total-cache/
-  [2]: http://codex.wordpress.org/Function_Reference/do_shortcode
