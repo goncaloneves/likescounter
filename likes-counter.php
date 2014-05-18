@@ -4,7 +4,7 @@
  * Author URI: https://github.com/goncaloneves
  * Plugin Name: Likes Counter 
  * Plugin URI: https://github.com/goncaloneves/likescounter
- * Description: Show the Likes Counter on your Wordpress website. Likes Counter shortcode comes with the following attributes: facebook page (or id), cache duration, offset and separator.
+ * Description: Show the Likes Counter on your Wordpress website. You can set the following attributes: facebook page (or id), cache duration, offset and separator.
  * License: License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Version: 1.0
