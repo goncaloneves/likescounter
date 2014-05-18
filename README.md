@@ -1,7 +1,21 @@
 Likes Counter Plugin
 ============
 
+=== Plugin Name ===
+
+Contributors: goncaloneves
+Donate link: https://github.com/goncaloneves
+Tags: facebook, fb, likes, like, counter, count, graph, shortcode, plugin
+Requires at least: 3.0.1
+Tested up to: 3.9.1
+Stable tag: 1.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 Show the Likes Counter on your Wordpress website. You can set the following attributes: facebook page (or id), cache duration, offset and separator.
+
+
+== Description ==
 
 Likes Counter gets Facebook Likes of any page you want and stores the returning value temporarily in database so it doesn't bubble requests to Facebook API.
 
@@ -59,6 +73,40 @@ If you get this there are two possible reasons:
 If you need help please contact me via Support tab.
 
 Feel free to contribute and fork, this plugin is at https://github.com/goncaloneves/likescounter
+
+
+== Installation ==
+
+1. Upload `likes-counter` directory to the `/wp-content/plugins/` directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Place [likescounter page='page_name_or_id'] shortcode with attributes in your post or page
+
+or
+
+ 1. Install plugin directly in Wordpress through the 'Plugins', Add New -> Search panel
+ 2. Search for `Likes Counter`
+ 3. Place [likescounter page='page_name_or_id'] shortcode with attributes in your post or page
+
+
+== Frequently Asked Questions ==
+
+= Do you need support or found an issue ? =
+
+Please write in Support tab or issue on Github at https://github.com/goncaloneves/likescounter/issues
+
+
+== Screenshots ==
+
+1. Likes Counter for Wordpress without formatting.
+2. Likes Counter for Wordpress without formatting.
+3. Likes Counter for Wordpress with formatting.
+4. Likes Counter for Wordpress with formatting.
+
+
+== Changelog ==
+
+= 1.0 =
+* First stable release.
 
   [1]: http://wordpress.org/plugins/w3-total-cache/
   [2]: http://codex.wordpress.org/Function_Reference/do_shortcode
