@@ -23,14 +23,11 @@ This plugin store its values with Transients API, so it can be cachable outside 
 I made this plugin to be as light as possible, so I ended up making a shortcode that gives the user the functionality to build a powerful Facebook Likes Counter.
 
 
-----------
-
-
-## Usage ##
+= Usage =
 
 You can place it anywhere in your post/page with [likescounter page='*page_name_or_id*'] shortcode.
 
-**Example:**
+Example:
 > [likescounter page='WordPress' duration='30' offset='10' separator='dot']
 
 In this example:
@@ -44,10 +41,7 @@ Inside your php files, for example in a Theme template, use [do_shortcode](http:
     <?php echo do_shortcode( '[likescounter page="page_name_or_id"]' ); ?>
 
 
-----------
-
-
-## Attributes ##
+= Attributes =
 
 *   **page (string):** facebook page name (ex: wordpress) or id (ex: 6427302910)
 *   **duration (int) (default: 30):** duration in minutes to cache in database before making a new request [1 to 1440]
@@ -55,10 +49,7 @@ Inside your php files, for example in a Theme template, use [do_shortcode](http:
 *   **separator (string) (default: none):** thousand separator type [dot, comma or space]
 
 
-----------
-
-
-## Important ##
+= Important =
 
 > Could not get likes data. Please verify if page is correct.
 
@@ -66,9 +57,6 @@ If you get this there are two possible reasons:
 
  - Page / id misspelled or doesn't exist (most likely),
  - Couldn't connect to Facebook Graph API or Timeout. It may happen if you reach Facebook policy limits, consider increasing cache duration.
-
-
-----------
 
 
 **Thank you** for you interest in Likes Counter plugin.
