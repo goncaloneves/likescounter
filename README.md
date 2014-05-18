@@ -59,3 +59,6 @@ If you get this there are two possible reasons:
 If you need help please contact me via Support tab.
 
 Feel free to contribute and fork, this plugin is at https://github.com/goncaloneves/likescounter
+
+  [1]: http://wordpress.org/plugins/w3-total-cache/
+  [2]: http://codex.wordpress.org/Function_Reference/do_shortcode
