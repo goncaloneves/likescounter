@@ -1,7 +1,7 @@
 Likes Counter Plugin
 ============
 
-Show the Likes Counter on your Wordpress website. Likes Counter shortcode comes with the following attributes: facebook page (or id), cache duration, offset and separator.
+Show the Likes Counter on your Wordpress website. You can set the following attributes: facebook page (or id), cache duration, offset and separator.
 
 Likes Counter gets Facebook Likes of any page you want and stores the returning value temporarily in database so it doesn't bubble requests to Facebook API.
 
