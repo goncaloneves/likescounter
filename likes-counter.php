@@ -4,10 +4,10 @@
  * Author URI: https://github.com/goncaloneves
  * Plugin Name: Likes Counter 
  * Plugin URI: https://github.com/goncaloneves/likescounter
- * Description: Show the Likes Counter on your Wordpress website. You can set the following attributes: facebook page (or id), cache duration, offset and separator.
+ * Description: Show multiple Likes Counter on your website. You can set: Facebook page (or id), cache duration, offset, separator and tag around each character.
  * License: License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Version: 1.0
+ * Version: 1.1
  * Text Domain: likes-counter
  */
 
@@ -51,6 +51,25 @@ function get_likes( $page, $expiration ) {
 }
 
 /**********************************************************************
+  Add Character Tag ( Number, Tag )
+**********************************************************************/
+function add_character_tag( $number, $tag ) {
+    if ( $tag === 'false' ) {
+        return $number;
+    } else {
+        $number_array = str_split( $number );
+        foreach ( $number_array as $value ) {
+            if ( $value === ' ' || $value === ',' || $value === '.' ) {
+                $number_tag .= '<span class="likes-counter-separator">' . $value . '</span>';
+            } else {
+               $number_tag .= '<span class="likes-counter">' . $value . '</span>';
+            }
+        }
+        return $number_tag;
+    }
+}
+
+/**********************************************************************
   Add Separator ( Number, Type to format number )
 **********************************************************************/
 function add_separator( $number, $type ) {
@@ -65,7 +84,6 @@ function add_separator( $number, $type ) {
             $number = number_format( $number, 0, '', ' ' );
             break;
     }
-
     return $number;
 }
 
@@ -91,18 +109,20 @@ function likes_counter( $atts ) {
         'duration' => '30',
         'offset' => '',
         'page' => '',
-        'separator' => ''
+        'separator' => '',
+        'tag' => 'true'
 	), $atts );
 
     $page = $likes_options[ 'page' ];
     $likes = get_likes( $likes_options[ 'page' ], $likes_options[ 'duration' ] );
 
     if ( $likes === false ) {
-        return __( 'Could not get likes data. Please verify if page is correct.', 'likes-counter' );;
+        return __( 'Could not get likes data. Please verify if page is correct.', 'likes-counter' );
     } else {
-        $separator = $likes_options[ 'separator' ];
         $offset = $likes_options[ 'offset' ];
-        return add_separator( add_offset( $likes, $offset ), $separator );  
+        $separator = $likes_options[ 'separator' ];
+        $tag = $likes_options[ 'tag' ];
+        return add_character_tag( add_separator( add_offset( $likes, $offset ), $separator ), $tag );  
     }
 }
 
