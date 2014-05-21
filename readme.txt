@@ -76,7 +76,6 @@ Now lets add some CSS inside *style.css* of your active Theme:
     	padding: 2px 4px;
     }
 
-
 PHP:
 
 If you need to use inside a Theme Template file, use [do_shortcode](http://codex.wordpress.org/Function_Reference/do_shortcode 'do_shortcode'):
@@ -125,10 +124,11 @@ Please write in Support tab or issue on Github at https://github.com/goncaloneve
 
 == Screenshots ==
 
-1. Likes Counter for Wordpress without formatting.
+1. Likes Counter with css styling from Example in Description tab.
 2. Likes Counter for Wordpress without formatting.
-3. Likes Counter for Wordpress with formatting.
+3. Likes Counter for Wordpress without formatting.
 4. Likes Counter for Wordpress with formatting.
+5. Likes Counter for Wordpress with formatting.
 
 == Changelog ==
 
