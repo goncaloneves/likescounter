@@ -7,7 +7,7 @@
  * Description: Show multiple Likes Counter on your website. You can set: Facebook page (or id), cache duration, offset, separator and tag around each character.
  * License: License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Version: 1.1
+ * Version: 1.2
  * Text Domain: likes-counter
  */
 
@@ -61,6 +61,8 @@ function add_character_tag( $number, $tag ) {
         foreach ( $number_array as $value ) {
             if ( $value === ' ' || $value === ',' || $value === '.' ) {
                 $number_tag .= '<span class="likes-counter-separator">' . $value . '</span>';
+            } else if ( $value === 'K' || $value === 'M' || $value === 'B' ) {
+                $number_tag .= '<span class="likes-counter-separator">' . $value . '</span>';
             } else {
                $number_tag .= '<span class="likes-counter">' . $value . '</span>';
             }
@@ -79,6 +81,15 @@ function add_separator( $number, $type ) {
             break;
         case 'dot':
             $number = number_format( $number, 0, '', '.' );
+            break;
+        case 'short':
+            if ( $number < 1000000 ) {
+                $number = number_format( $number / 1000 ) . 'K';
+            } else if ( $number < 1000000000 ) {
+                $number = number_format( $number / 1000000 ) . 'M';
+            } else {
+                $number = number_format( $number / 1000000000 ) . 'B';
+            }
             break;
         case 'space':
             $number = number_format( $number, 0, '', ' ' );
@@ -111,7 +122,7 @@ function likes_counter( $atts ) {
         'page' => '',
         'separator' => '',
         'tag' => 'true'
-	), $atts );
+    ), $atts );
 
     $page = $likes_options[ 'page' ];
     $likes = get_likes( $likes_options[ 'page' ], $likes_options[ 'duration' ] );

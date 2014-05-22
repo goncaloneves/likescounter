@@ -5,7 +5,7 @@ Donate link: https://github.com/goncaloneves
 Tags: facebook, fb, likes, like, counter, count, graph, shortcode, plugin
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,10 +85,10 @@ If you need to use inside a Theme Template file, use [do_shortcode](http://codex
 = Attributes =
 
 *   **page (string):** facebook page name (ex: wordpress) or id (ex: 6427302910)
-*   **duration (int) (default: 30):** duration in minutes to cache in database before making a new request [1 to 1440]
-*   **offset (int) (default: 0):** subtracts from Likes value and returns the rest. It can be used to reset likes count for a Likes goal objective in marketing campaigns. [0 to number of current likes]
-*   **separator (string) (default: none):** thousand separator type [dot, comma or space]
-*   **tag (boolean) (default: true):** span tag around each character for css styling. `<span class="likes-counter">number_character</span>` for number characters and `<span class="likes-counter-separator">separator_character</span>` for separators characters. [true, false]
+*   **duration (1 to 1440 - default: 30):** duration in minutes to cache in database before making a new request.
+*   **offset (0 to number of current likes - default: 0):** subtracts from Likes value and returns the rest. It can be used to reset likes count for a Likes goal objective in marketing campaigns.
+*   **separator (dot, comma, short, space or none - default: none):** thousand separator type. Short separator, shortens thousand to K, million to M and billion to B.
+*   **tag (true or false - default: true):** span tag around each character for css styling. `<span class="likes-counter">number_character</span>` for number characters and `<span class="likes-counter-separator">separator_character</span>` for separators characters.
 
 = Important =
 
@@ -131,6 +131,9 @@ Please write in Support tab or issue on Github at https://github.com/goncaloneve
 5. Likes Counter for Wordpress with formatting.
 
 == Changelog ==
+
+= 1.2 =
+* Add short number separator (K for thousand, M for million and B for billion).
 
 = 1.1 =
 * Add add_character_tag function to create a span tag around each character for better css styling.
