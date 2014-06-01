@@ -83,12 +83,16 @@ function add_separator( $number, $type ) {
             $number = number_format( $number, 0, '', '.' );
             break;
         case 'short':
-            if ( $number < 1000000 ) {
-                $number = number_format( $number / 1000 ) . 'K';
-            } else if ( $number < 1000000000 ) {
-                $number = number_format( $number / 1000000 ) . 'M';
-            } else {
-                $number = number_format( $number / 1000000000 ) . 'B';
+            if ( $number >= 1000 ) {
+                if ( $number < 10000 ) {
+                    $number = substr( number_format( $number / 1000, 2 ), 0, -1 ) . 'K';
+                } else if ( $number < 1000000 ) {
+                    $number = number_format( $number / 1000 ) . 'K';
+                } else if ( $number < 1000000000 ) {
+                    $number = number_format( $number / 1000000 ) . 'M';
+                } else {
+                    $number = number_format( $number / 1000000000 ) . 'B';
+                }
             }
             break;
         case 'space':
