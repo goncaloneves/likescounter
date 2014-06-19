@@ -5,7 +5,7 @@ Donate link: https://www.gittip.com/goncaloneves
 Tags: facebook, fb, likes, like, counter, count, graph, shortcode, plugin
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,6 +131,11 @@ Please write in Support tab or issue on Github at https://github.com/goncaloneve
 5. Likes Counter for Wordpress with formatting.
 
 == Changelog ==
+
+= 1.4 =
+* Encapsulate plugin functions inside a singleton class.
+* Update wp_remote_get to wp_safe_remote_get, for stronger security.
+* Changed intval to (int) type for better performance.
 
 = 1.3 =
 * Add dot in short separator when likes are inferior to 10 000 likes.
