@@ -109,6 +109,7 @@ if ( ! class_exists( 'Likes_Counter_Class' ) ) {
                 return $number;
             } else {
                 $number_array = str_split( $number );
+                $number_tag = '';
                 foreach ( $number_array as $value ) {
                     if ( $value === ' ' || $value === ',' || $value === '.' ) {
                         $number_tag .= '<span class="likes-counter-separator">' . $value . '</span>';
