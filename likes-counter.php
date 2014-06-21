@@ -2,7 +2,7 @@
 /**
  * Author: Gonçalo Neves
  * Author URI: https://github.com/goncaloneves
- * Plugin Name: Likes Counter 
+ * Plugin Name: Likes Counter
  * Plugin URI: https://github.com/goncaloneves/likescounter
  * Description: Show multiple Likes Counter on your website. You can set: Facebook page (or id), cache duration, offset, separator and tag around each character.
  * License: License: GPLv2 or later
@@ -66,7 +66,7 @@ if ( ! class_exists( 'Likes_Counter_Class' ) ) {
 
         /**
          * Get Likes from Facebook OpenGraph.
-         * 
+         *
          * @param string $page The page name or id number.
          * @param integer $expiration Cache duration for transient.
          *
@@ -86,7 +86,7 @@ if ( ! class_exists( 'Likes_Counter_Class' ) ) {
                     } else {
                         set_transient( 'likes_counter_' . strtolower( $page ), $likes, 30 * MINUTE_IN_SECONDS );
                     }
-                    return $likes;  
+                    return $likes;
                 } else {
                     return false;
                 }
@@ -98,7 +98,7 @@ if ( ! class_exists( 'Likes_Counter_Class' ) ) {
 
         /**
          * Add span tag around each character.
-         * 
+         *
          * @param string|integer $number Number to add span tags.
          * @param string $tag True or false.
          *
@@ -124,7 +124,7 @@ if ( ! class_exists( 'Likes_Counter_Class' ) ) {
 
         /**
          * Add thousand separator.
-         * 
+         *
          * @param integer $number Number to add thousand separator.
          * @param string $type Thousand separator type.
          *
@@ -160,7 +160,7 @@ if ( ! class_exists( 'Likes_Counter_Class' ) ) {
 
         /**
          * Subtract offset from number.
-         * 
+         *
          * @param integer $number Bigger number.
          * @param integer $offset Smaller number to subtract.
          *
@@ -177,7 +177,7 @@ if ( ! class_exists( 'Likes_Counter_Class' ) ) {
 
         /**
          * Likes Counter shortcode function.
-         * 
+         *
          * @param array $atts Shortcode attributes.
          *
          * @return string Formatted likes string.
@@ -201,7 +201,7 @@ if ( ! class_exists( 'Likes_Counter_Class' ) ) {
                 $offset = (int) $likes_options[ 'offset' ];
                 $separator = $likes_options[ 'separator' ];
                 $tag = $likes_options[ 'tag' ];
-                return $this->add_character_tag( $this->add_separator( $this->add_offset( $likes, $offset ), $separator ), $tag );  
+                return $this->add_character_tag( $this->add_separator( $this->add_offset( $likes, $offset ), $separator ), $tag );
             }
         }
     }
